@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "840382678015",
+    "project_id": "meetbuddy-4aaae",
+    "storage_bucket": "meetbuddy-4aaae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840382678015:android:e8a5da70d237134c951dca",
+        "android_client_info": {
+          "package_name": "com.harshad.meetbuddy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBedQb3LxCqtNjimK5VqF7yse0ldmcafbg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MeetBuddy</string>
+    <string name="tv_login_heading">Log In</string>
+    <string name="etv_mobile_no_label">Mobile No : </string>
+    <string name="etv_mobile_no_hint">Enter mobile no </string>
+    <string name="btn_log_in">Login</string>
+    <string name="tv_network_heading_">Network connection</string>
+    <string name="tv_network_desc">Please check your network connection</string>
 </resources>
