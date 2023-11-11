@@ -92,13 +92,14 @@ class MainActivity : BaseActivity() {
     }
 
     private fun launchNextScreen() {
-        val videoScreenIntent = Intent(this@MainActivity, VideoMeetActivity::class.java)
+        val videoScreenIntent = Intent(this@MainActivity, ChooseCallModeActivity::class.java)
         startActivity(videoScreenIntent)
     }
 
     private fun performClicks() {
         binding.btnLogin.setOnClickListener {
-            val mobileNo = binding.etvMobileNo.text.toString()
+            launchNextScreen()
+            /*val mobileNo = binding.etvMobileNo.text.toString()
             if (mobileNo.isEmpty()) {
                 binding.etvMobileNo.error = "Please enter mobile number"
             } else {
@@ -119,9 +120,11 @@ class MainActivity : BaseActivity() {
                         binding.etvOtpNo.error = "please enter OTP.."
                     }
                 }
-            }
+            }*/
         }
+
     }
+
 
     override fun onRequestPermissionsResult(
         requestCode: Int,

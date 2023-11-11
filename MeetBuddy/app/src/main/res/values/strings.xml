@@ -8,4 +8,9 @@
     <string name="tv_network_desc">Please check your network connection</string>
     <string name="tv_opt_label">OTP :</string>
     <string name="etv_otp_hint">Enter 6 digit OTP..</string>
+    <string name="tv_choose">Choose Calling Mode</string>
+    <string name="btn_voice">Voice</string>
+    <string name="btn_video">Video</string>
+    <string name="btn_join">Join</string>
+    <string name="btn_leave">Leave</string>
 </resources>
