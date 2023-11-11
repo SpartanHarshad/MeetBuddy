@@ -59,6 +59,39 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_mobile_no_label" />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_otp_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/tv_opt_label"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:visibility="gone"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etv_mobile_no" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etv_otp_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_edit_txt"
+            android:hint="@string/etv_otp_hint"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="8dp"
+            android:visibility="gone"
+            android:inputType="number"
+            android:maxLength="6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_otp_label" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_login"
             android:layout_width="wrap_content"
@@ -72,6 +105,8 @@
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etv_mobile_no" />
+            app:layout_constraintTop_toBottomOf="@id/etv_otp_no" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

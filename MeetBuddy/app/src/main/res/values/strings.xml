@@ -6,4 +6,6 @@
     <string name="btn_log_in">Login</string>
     <string name="tv_network_heading_">Network connection</string>
     <string name="tv_network_desc">Please check your network connection</string>
+    <string name="tv_opt_label">OTP :</string>
+    <string name="etv_otp_hint">Enter 6 digit OTP..</string>
 </resources>
