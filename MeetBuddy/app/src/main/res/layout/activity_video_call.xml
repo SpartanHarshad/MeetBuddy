@@ -13,6 +13,20 @@
             android:layout_height="wrap_content"
             tools:context=".ui.VideoCallActivity">
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="10dp"
+                android:text="@string/tv_video_call"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <FrameLayout
                 android:id="@+id/local_video_view_container"
                 android:layout_width="320dp"
@@ -21,7 +35,7 @@
                 android:background="@android:color/darker_gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_heading" />
 
             <FrameLayout
                 android:id="@+id/remote_video_view_container"
@@ -39,28 +53,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
+                android:background="@drawable/bg_button"
+                android:onClick="joinChannel"
                 android:text="@string/btn_join"
                 android:textAllCaps="false"
-                android:background="@drawable/bg_button"
                 android:textColor="@color/white"
                 android:textSize="14sp"
-                android:onClick="joinChannel"
                 app:layout_constraintStart_toStartOf="@id/remote_video_view_container"
-                app:layout_constraintTop_toBottomOf="@id/remote_video_view_container"/>
+                app:layout_constraintTop_toBottomOf="@id/remote_video_view_container" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_leave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
+                android:background="@drawable/bg_button"
+                android:onClick="leaveChannel"
                 android:text="@string/btn_leave"
                 android:textAllCaps="false"
-                android:background="@drawable/bg_button"
                 android:textColor="@color/white"
                 android:textSize="14sp"
-                android:onClick="leaveChannel"
                 app:layout_constraintEnd_toEndOf="@id/remote_video_view_container"
-                app:layout_constraintTop_toBottomOf="@id/remote_video_view_container"/>
+                app:layout_constraintTop_toBottomOf="@id/remote_video_view_container" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

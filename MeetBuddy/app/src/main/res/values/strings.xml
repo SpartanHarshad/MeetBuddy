@@ -13,4 +13,6 @@
     <string name="btn_video">Video</string>
     <string name="btn_join">Join</string>
     <string name="btn_leave">Leave</string>
+    <string name="tv_video_call">Video Call</string>
+    <string name="txt_audio_heading">Press the button to join a channel</string>
 </resources>

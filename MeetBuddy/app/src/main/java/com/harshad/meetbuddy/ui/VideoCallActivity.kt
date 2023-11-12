@@ -39,14 +39,14 @@ class VideoCallActivity : BaseActivity() {
 
         //Listen for the remote host joining the channel to get the uid of the host.
         override fun onUserJoined(uid: Int, elapsed: Int) {
-            //super.onUserJoined(uid, elapsed)
+            super.onUserJoined(uid, elapsed)
             showMessage("Remote User joined $uid")
             //Set the remote video view
             runOnUiThread { setupRemoteVideo(uid) }
         }
 
         override fun onJoinChannelSuccess(channel: String?, uid: Int, elapsed: Int) {
-            //super.onJoinChannelSuccess(channel, uid, elapsed)
+            super.onJoinChannelSuccess(channel, uid, elapsed)
             isJoined = true
             showMessage("Joined Channel $channel")
         }
@@ -55,6 +55,12 @@ class VideoCallActivity : BaseActivity() {
             //super.onUserOffline(uid, reason)
             showMessage("Remote user offline $uid $reason")
             runOnUiThread { remoteSurfaceView!!.visibility = View.VISIBLE }
+        }
+
+        override fun onError(err: Int) {
+            super.onError(err)
+            if (err==Constants.ERR_INVALID_TOKEN)
+            showMessage("error invalid token $err ")
         }
     }
 
