@@ -57,6 +57,7 @@ class VoiceCallActivity : BaseActivity() {
 
         override fun onError(err: Int) {
             super.onError(err)
+            isJoined = false
             showMessage("error : $err")
         }
     }
@@ -110,7 +111,7 @@ class VoiceCallActivity : BaseActivity() {
         // Join the channel with a temp token.
         // You need to specify the user ID yourself, and ensure that it is unique in the channel.
         Log.d("Voice","")
-        agoraEngine?.joinChannel(Constant.token, channelName, uid, options)
+        agoraEngine?.joinChannel(Constant.audioCallToken, channelName, uid, options)
     }
 
     fun joinLeaveChannel(view: View) {

@@ -98,17 +98,18 @@ class MainActivity : BaseActivity() {
 
     private fun performClicks() {
         binding.btnLogin.setOnClickListener {
-            launchNextScreen()
-            /*val mobileNo = binding.etvMobileNo.text.toString()
+            //launchNextScreen()
+            val mobileNo = binding.etvMobileNo.text.toString()
             if (mobileNo.isEmpty()) {
                 binding.etvMobileNo.error = "Please enter mobile number"
             } else {
                 if (verificationId == "") {
-                    signUpLogInViewModel.sendVerificationCode(
+                    /*signUpLogInViewModel.sendVerificationCode(
                         "+91$mobileNo",
                         this@MainActivity,
                         auth
-                    )
+                    )*/
+                    launchNextScreen()
                 } else {
                     if (binding.etvOtpNo.text.toString().isNotEmpty()) {
                         val credential: PhoneAuthCredential = PhoneAuthProvider.getCredential(
@@ -120,7 +121,7 @@ class MainActivity : BaseActivity() {
                         binding.etvOtpNo.error = "please enter OTP.."
                     }
                 }
-            }*/
+            }
         }
 
     }

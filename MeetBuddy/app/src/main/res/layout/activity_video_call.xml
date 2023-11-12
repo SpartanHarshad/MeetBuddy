@@ -18,8 +18,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/black"
-                android:paddingHorizontal="6dp"
-                android:paddingVertical="10dp"
+                android:paddingHorizontal="16dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="10dp"
                 android:text="@string/tv_video_call"
                 android:textColor="@color/white"
                 android:textSize="16sp"
@@ -75,6 +76,21 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@id/remote_video_view_container"
                 app:layout_constraintTop_toBottomOf="@id/remote_video_view_container" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_call_logs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_button"
+                android:onClick="leaveChannel"
+                android:text="@string/btn_view_logs"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_leave"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>
