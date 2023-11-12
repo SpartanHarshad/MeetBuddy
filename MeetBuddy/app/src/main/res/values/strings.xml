@@ -16,4 +16,8 @@
     <string name="tv_video_call">Video Call</string>
     <string name="txt_audio_heading">Press the button to join a channel</string>
     <string name="btn_view_logs">View Logs</string>
+    <string name="tv_call_duration_label">Duration : </string>
+    <string name="tv_time_stamp_label">Time Stamp :</string>
+    <string name="tv_remoted_user_id_label">Remote User Id : </string>
+    <string name="tv_video_call_log_heading">Video Call Logs</string>
 </resources>

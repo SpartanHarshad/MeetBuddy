@@ -101,8 +101,12 @@ class VideoCallActivity : BaseActivity() {
         meetViewModel = ViewModelProvider(this, meetViewModelFactory)[MeetViewModel::class.java]
 
         binding.btnCallLogs.setOnClickListener {
-            val viewLogs = Intent(this, ViewVideoLogsActivity::class.java)
-            startActivity(viewLogs)
+            if (!isJoined){
+                val viewLogs = Intent(this, ViewVideoLogsActivity::class.java)
+                startActivity(viewLogs)
+            }else{
+             showMessage("You can't see call logs while call is on..")
+            }
         }
 
     }

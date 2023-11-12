@@ -15,9 +15,9 @@ interface MeetDao {
     suspend fun saveVideoCall(videoCallEntity: VideoCallEntity)
 
     @Query("SELECT * FROM Audio_Call_Log")
-    fun getAllVoiceCallLogs():List<AudioCallEntity>
+   suspend fun getAllVoiceCallLogs():List<AudioCallEntity>
 
     @Query("SELECT * FROM Video_Call_Log")
-    fun getAllVideoCallLogs():List<VideoCallEntity>
+    suspend fun getAllVideoCallLogs():List<VideoCallEntity>
 
 }

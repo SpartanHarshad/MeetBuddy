@@ -21,11 +21,11 @@ class MeetRepository(val meetDao: MeetDao) {
         }
     }
 
-     fun getAllVideoCallLogs(): List<VideoCallEntity> {
+     suspend fun getAllVideoCallLogs(): List<VideoCallEntity> {
         return meetDao.getAllVideoCallLogs()
     }
 
-     fun getAllAudioCallLogs(): List<AudioCallEntity> {
+     suspend fun getAllAudioCallLogs(): List<AudioCallEntity> {
         return meetDao.getAllVoiceCallLogs()
     }
 
