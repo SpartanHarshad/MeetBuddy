@@ -17,6 +17,7 @@ class SignUpLogInViewModel : ViewModel() {
     val verificationIdLiveData = MutableLiveData<String>()
     val isUserAuthorizedLiveData = MutableLiveData<Boolean>()
     val errorMessageLiveData = MutableLiveData<String>()
+    val onCodeReceivedLiveDta = MutableLiveData<String>()
 
     fun sendVerificationCode(phoneNumber: String, ctx: Activity, auth: FirebaseAuth) {
         verificationIdLiveData.postValue("")

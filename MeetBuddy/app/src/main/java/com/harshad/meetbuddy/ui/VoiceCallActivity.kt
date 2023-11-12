@@ -96,6 +96,7 @@ class VoiceCallActivity : BaseActivity() {
             config.mAppId = Constant.Agora_App_Id
             config.mEventHandler = mRtcEventHandler
             agoraEngine = RtcEngine.create(config)
+            agoraEngine!!.enableAudio()
         } catch (ex: Exception) {
             Log.d("AgoraAudioCalling", "exception $ex")
         }
@@ -111,6 +112,7 @@ class VoiceCallActivity : BaseActivity() {
         // Join the channel with a temp token.
         // You need to specify the user ID yourself, and ensure that it is unique in the channel.
         Log.d("Voice","")
+        agoraEngine?.disableVideo()
         agoraEngine?.joinChannel(Constant.audioCallToken, channelName, uid, options)
     }
 

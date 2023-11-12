@@ -53,7 +53,7 @@ class MainActivity : BaseActivity() {
                 isAllPermissionGranted = false
             }
         }
-      Log.d("isPermission","permission $isAllPermissionGranted")
+        Log.d("isPermission", "permission $isAllPermissionGranted")
         if (isAllPermissionGranted) {
             performClicks()
         } else {
@@ -66,6 +66,8 @@ class MainActivity : BaseActivity() {
         signUpLogInViewModel.verificationIdLiveData.observe(this) { newVerificationId ->
             if (newVerificationId != "") {
                 verificationId = newVerificationId
+                binding.etvOtpNo.visibility = View.VISIBLE
+                binding.tvOtpLabel.visibility = View.VISIBLE
             }
         }
 
@@ -76,12 +78,10 @@ class MainActivity : BaseActivity() {
         }
 
         signUpLogInViewModel.isUserAuthorizedLiveData.observe(this) { isUserAuthorised ->
-            Log.d("LogIn","is member $isUserAuthorised")
+            Log.d("LogIn", "is member $isUserAuthorised")
             if (isUserAuthorised) {
                 launchNextScreen()
             } else {
-                binding.etvOtpNo.visibility = View.VISIBLE
-                binding.tvOtpLabel.visibility = View.VISIBLE
                 Toast.makeText(
                     this,
                     "You are not authorized we have send OTP with your phone number enter this opt",
@@ -98,27 +98,39 @@ class MainActivity : BaseActivity() {
 
     private fun performClicks() {
         binding.btnLogin.setOnClickListener {
-            //launchNextScreen()
             val mobileNo = binding.etvMobileNo.text.toString()
-            if (mobileNo.isEmpty()) {
-                binding.etvMobileNo.error = "Please enter mobile number"
-            } else {
-                if (verificationId == "") {
-                    /*signUpLogInViewModel.sendVerificationCode(
+            if (auth.currentUser != null && auth.currentUser!!.phoneNumber != null) {
+                if ("+91$mobileNo" != auth.currentUser!!.phoneNumber) {
+                    Log.d("LogIn", "${auth.currentUser?.phoneNumber}")
+                    signUpLogInViewModel.sendVerificationCode(
                         "+91$mobileNo",
                         this@MainActivity,
                         auth
-                    )*/
-                    launchNextScreen()
+                    )
                 } else {
-                    if (binding.etvOtpNo.text.toString().isNotEmpty()) {
-                        val credential: PhoneAuthCredential = PhoneAuthProvider.getCredential(
-                            verificationId,
-                            binding.etvOtpNo.text.toString()
+                    launchNextScreen()
+                }
+            } else {
+                if (mobileNo.isEmpty()) {
+                    binding.etvMobileNo.error = "Please enter mobile number"
+                } else {
+                    Log.d("LogIn", "${auth.currentUser?.phoneNumber}")
+                    if (verificationId == "") {
+                        signUpLogInViewModel.sendVerificationCode(
+                            "+91$mobileNo",
+                            this@MainActivity,
+                            auth
                         )
-                        signUpLogInViewModel.verifyOpt(credential, this, auth)
                     } else {
-                        binding.etvOtpNo.error = "please enter OTP.."
+                        if (binding.etvOtpNo.text.toString().isNotEmpty()) {
+                            val credential: PhoneAuthCredential = PhoneAuthProvider.getCredential(
+                                verificationId,
+                                binding.etvOtpNo.text.toString()
+                            )
+                            signUpLogInViewModel.verifyOpt(credential, this, auth)
+                        } else {
+                            binding.etvOtpNo.error = "please enter OTP.."
+                        }
                     }
                 }
             }

@@ -8,18 +8,15 @@ import java.util.Locale
 object Util {
 
     fun getDurationForMilliseconds(milliseconds: Long): String {
-        val calendar = Calendar.getInstance()
-        calendar.timeInMillis = milliseconds
-        val amPm = if (calendar.get(HOUR_OF_DAY) < 12) "AM" else "PM"
-        val hours = calendar.get(Calendar.HOUR) % 12
-        val minutes = calendar.get(Calendar.MINUTE)
-        val seconds = calendar.get(Calendar.SECOND)
-        return String.format("%02d:%02d:%02d %s", hours, minutes, seconds, amPm)
+        val hours = (milliseconds / (1000 * 60 * 60)) % 24
+        val minutes = (milliseconds / (1000 * 60)) % 60
+        val seconds = (milliseconds / 1000) % 60
+        return String.format("%02d:%02d:%02d", hours, minutes, seconds)
     }
 
 
     fun getTimeStamp(milliseconds: Long): String {
-        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss a", Locale.getDefault())
         return simpleDateFormat.format(milliseconds)
     }
 }
